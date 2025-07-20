@@ -1,24 +1,3 @@
-# from rest_framework import serializers
-# from .models import Order
-# from product.models import Product
-
-# class OrderSerializer(serializers.ModelSerializer):
-#     products = serializers.PrimaryKeyRelatedField(queryset=Product.objects.all(), many=True)
-
-#     class Meta:
-#         model = Order
-#         fields = ['id', 'user', 'products', 'total_price', 'status', 'created_at', 'updated_at']
-#         read_only_fields = ['user', 'total_price', 'status', 'created_at', 'updated_at']
-
-#     def create(self, validated_data):
-#         products = validated_data.pop('products')
-#         user = self.context['request'].user
-#         total_price = sum(product.price for product in products)
-
-#         order = Order.objects.create(user=user, total_price=total_price)
-#         order.products.set(products)
-#         return order
-
 from rest_framework import serializers
 from .models import CartItem, Order, OrderItem
 from product.models import Product
@@ -66,3 +45,68 @@ class OrderSerializer(serializers.ModelSerializer):
 
         cart_items.delete()  # Clear the cart after placing order
         return order
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# from rest_framework import serializers
+# from .models import Order
+# from product.models import Product
+
+# class OrderSerializer(serializers.ModelSerializer):
+#     products = serializers.PrimaryKeyRelatedField(queryset=Product.objects.all(), many=True)
+
+#     class Meta:
+#         model = Order
+#         fields = ['id', 'user', 'products', 'total_price', 'status', 'created_at', 'updated_at']
+#         read_only_fields = ['user', 'total_price', 'status', 'created_at', 'updated_at']
+
+#     def create(self, validated_data):
+#         products = validated_data.pop('products')
+#         user = self.context['request'].user
+#         total_price = sum(product.price for product in products)
+
+#         order = Order.objects.create(user=user, total_price=total_price)
+#         order.products.set(products)
+#         return order
