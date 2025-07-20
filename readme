@@ -11,6 +11,15 @@ This is a backend API for an e-commerce platform built with **Django**, **Django
 
 ---
 
+🚀 Hosted API (on Render)
+🔗 Base URL:
+https://e-commerce-ej08.onrender.com
+
+You can test all endpoints using Postman (link below).
+
+📫 Postman Collection
+👉 Click to View Postman Collection (https://documenter.getpostman.com/view/31243852/2sB34kEKMC)
+
 ## 🚀 Setup Instructions
 
 1. Clone the Repository
