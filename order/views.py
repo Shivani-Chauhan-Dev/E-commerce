@@ -45,7 +45,7 @@ class OrderStatusUpdateView(APIView):
                 "new_status": new_status,
             }
         )
-
+            
         return Response({"message": f"Order status updated to {new_status}"})
 
 class CartItemView(APIView):

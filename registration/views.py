@@ -29,7 +29,7 @@ class LoginUser(APIView):
                     "email": user.email
                 },
                 "access": tokens["access"],
-                # "refresh": tokens["refresh"]
+                "refresh": tokens["refresh"]
             }, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
