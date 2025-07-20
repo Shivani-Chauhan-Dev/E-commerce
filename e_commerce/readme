@@ -1,0 +1,66 @@
+# 🛒 Django E-Commerce API
+
+This is a backend API for an e-commerce platform built with **Django**, **Django REST Framework**, **PostgreSQL**, and **Redis** for caching. It includes features like:
+
+- JWT authentication
+- Admin-only product/category management
+- User cart and order management
+- Real-time notifications with WebSockets (Django Channels)
+- PostgreSQL as the database
+- Redis for caching
+
+---
+
+## 🚀 Setup Instructions
+
+1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/e_commerce.git
+cd e_commerce
+
+2. Create and activate a virtual environment
+
+python -m venv venv
+venv\Scripts\activate   # Windows
+# source venv/bin/activate  # macOS/Linux
+
+3. Install Dependencies
+pip install -r requirements.txt
+
+4. Setup PostgreSQL Database
+Ensure PostgreSQL is installed and running.
+# Ensure you have PostgreSQL installed and running.if not install then install it.
+Create the database:
+
+5. Configure .env
+# PostgreSQL
+DB_NAME=ecommerce_db
+DB_USER=postgres
+DB_PASSWORD=yourpassword
+DB_HOST=localhost
+DB_PORT=5432
+# Redis
+REDIS_URL=redis://127.0.0.1:6379/1
+
+
+
+6. Run Migrations
+python manage.py makemigrations
+python manage.py migrate
+
+7. Create Superuser
+python manage.py createsuperuser
+
+8. Run Redis Server (if not already running)
+# Windows (via Redis installed)
+redis-server
+# Linux/macOS (if installed via apt or brew)
+redis-server
+
+9. Run the Django Development Server
+python manage.py runserver
+
+10. Run ASGI Server with Channels 
+# If you want WebSocket/real-time features:
+daphne e_commerce.asgi:application
