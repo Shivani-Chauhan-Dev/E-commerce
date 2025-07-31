@@ -7,6 +7,7 @@ from django.conf import settings
 from registration.models import User
 from product.models import Product
 
+
 class Order(models.Model):
     STATUS_CHOICES = [
         ('pending', 'Pending'),
